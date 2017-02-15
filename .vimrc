@@ -764,3 +764,18 @@
     nnoremap <leader>Q :q!<cr>
     nnoremap <leader>w :w<cr>
     nnoremap <leader>wq :wq<cr>
+
+    let g:tagbar_type_vue = {
+                \ 'ctagstype' : 'html',
+                \ 'kinds' : [
+                \ 'i:identifiers',
+                \ 'c:classes',
+                \ ],
+                \ }
+    let g:tagbar_type_html = {
+                \ 'ctagstype' : 'html',
+                \ 'kinds' : [
+                \ 'i:identifiers',
+                \ 'c:classes',
+                \ ],
+                \ }
