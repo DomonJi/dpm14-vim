@@ -621,7 +621,7 @@
     let g:airline_theme = 'dark'
     let mapleader = "\<Space>"
     highlight Pmenu ctermfg=2 ctermbg=3 guifg=#B8BBDE guibg=#3D3461
-
+    let g:airline#extensions#tabline#enabled = 1
     nnoremap <C-T> :TagbarToggle<CR>
     " YouCompleteMe
     let g:ycm_autoclose_preview_window_after_completion = 1
@@ -756,3 +756,9 @@
       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=gray14   ctermbg=3
       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=gray19 ctermbg=2
     augroup end
+
+    " map leader
+    nnoremap <leader>q :q<cr>
+    nnoremap <leader>Q :q!<cr>
+    nnoremap <leader>w :w<cr>
+    nnoremap <leader>wq :wq<cr>
