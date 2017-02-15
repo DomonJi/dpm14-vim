@@ -670,6 +670,7 @@
     let indent_guides_color_change_percent = 0
     let indent_guides_guide_size = 2
 
+    autocmd BufNewFile,BufRead *.vue set ft=vue
 
     " incsearch.vim
     function! s:noregexp(pattern) abort
@@ -734,7 +735,6 @@
     " augroup
     augroup vimenter
       au!
-      autocmd BufNewFile,BufRead *.vue set ft=vue
       autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
       autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
       autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
@@ -745,7 +745,7 @@
       autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
       autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
       autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
-      autocmd FileType vue noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+      autocmd FileType vue noremap <buffer> <c-f> :g/\v\<template/ .,/\v\<\/script\>/ call RangeHtmlBeautify()<cr>
       autocmd FileType vue vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
       autocmd FileType javascript set ts=2 sw=2 sts=2
       autocmd FileType html set ts=2 sw=2 sts=2
@@ -762,3 +762,5 @@
     nnoremap <leader>Q :q!<cr>
     nnoremap <leader>w :w<cr>
     nnoremap <leader>wq :wq<cr>
+    nnoremap <leader>t :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| sort > tags
+    nnoremap <leader>T :!find . -type f -iregex ".*\.js$" -exec jsctags {} -f \; \| sed '/^$/d' \| sort > tags
