@@ -118,7 +118,7 @@
     Bundle 'posva/vim-vue'
     Bundle 'maksimr/vim-jsbeautify'
     Bundle 'wavded/vim-stylus'
-    "Bundle 'gko/vim-coloresque'
+    Bundle 'rust-lang/rust.vim'
     Bundle 'leafgarland/typescript-vim'
     Bundle 'heavenshell/vim-jsdoc'
     Bundle 'bronson/vim-visual-star-search'
@@ -131,3 +131,4 @@
     Bundle 'terryma/vim-expand-region'
     Bundle 'danro/rename.vim'
     UnBundle 'xptemplate'
+    Bundle 'guns/vim-clojure-static'

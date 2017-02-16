@@ -632,6 +632,7 @@
     let g:ycm_key_list_select_completion = ['<Tab>', '<C-j>', '<Down>']
     let g:ycm_key_list_previous_completion = ['<C-k>','<S-Tab>', '<Up>']
     let g:ycm_seed_identifiers_with_syntax = 1
+    let g:ycm_rust_src_path = '/usr/local/rust/rustc-1.15.1-src/src'
     let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
     let g:ycm_semantic_triggers =  {
                 \   'c' : ['->', '.'],
@@ -640,7 +641,7 @@
                 \   'cpp,objcpp' : ['->', '.', '::'],
                 \   'perl' : ['->'],
                 \   'php' : ['->', '::', '(', 'use ', 'namespace ', '\'],
-                \   'cs,java,typescript,d,python,perl6,scala,vb,elixir,go,vue' : ['.', 're!(?=[a-zA-Z]{1,4})'],
+                \   'cs,java,typescript,d,python,perl6,scala,vb,elixir,go,vue' : ['.', 're!\w+'],
                 \   'html': ['<', '"', '</', ' '],
                 \   'vim' : ['re![_a-za-z]+[_\w]*\.'],
                 \   'ruby' : ['.', '::'],
@@ -648,6 +649,8 @@
                 \   'erlang' : [':'],
                 \   'haskell' : ['.', 're!.'],
                 \   'scss,css': [ 're!^\s{2,4}', 're!:\s+' ],
+                \   'clojure' : ['(','re!\w+'],
+                \   'rust' : ['->','.','::','re!\w+']
                 \ }
     nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
     nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
