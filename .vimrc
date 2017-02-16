@@ -755,8 +755,6 @@
       autocmd FileType vue set ts=2 sw=2 sts=2
       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=gray14   ctermbg=3
       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=gray19 ctermbg=2
-      "autocmd FileType javascript nnoremap <leader>t :!jsctags % -f
-      "autocmd FileType javascript nnoremap <leader>T :!find . -type f -iregex ".*\.js$" -exec jsctags {} -f \; \| sed '/^$/d' \| sort > tags
     augroup end
 
     " map leader
@@ -766,10 +764,10 @@
     nnoremap <leader>wq :wq<cr>
 
     let g:tagbar_type_vue = {
-                \ 'ctagstype' : 'html',
+                \ 'ctagstype' : 'vue',
                 \ 'kinds' : [
-                \ 'i:identifiers',
-                \ 'c:classes',
+                \ 'f:field',
+                \ 'f:function',
                 \ ],
                 \ }
     let g:tagbar_type_html = {
