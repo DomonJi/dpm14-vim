@@ -641,7 +641,7 @@
                 \   'cpp,objcpp' : ['->', '.', '::'],
                 \   'perl' : ['->'],
                 \   'php' : ['->', '::', '(', 'use ', 'namespace ', '\'],
-                \   'cs,java,typescript,d,python,perl6,scala,vb,elixir,go,vue' : ['.', 're!\w+'],
+                \   'cs,java,typescript,d,python,perl6,scala,vb,elixir,go,vue' : ['.', 're!([a-zA-Z0-9]{2,})'],
                 \   'html': ['<', '"', '</', ' '],
                 \   'vim' : ['re![_a-za-z]+[_\w]*\.'],
                 \   'ruby' : ['.', '::'],
@@ -649,8 +649,8 @@
                 \   'erlang' : [':'],
                 \   'haskell' : ['.', 're!.'],
                 \   'scss,css': [ 're!^\s{2,4}', 're!:\s+' ],
-                \   'clojure' : ['(','re!\w+'],
-                \   'rust' : ['->','.','::','re!\w+']
+                \   'clojure' : ['(','re!([a-zA-Z0-9]{2,})'],
+                \   'rust' : ['->','.','::','re!([a-zA-Z0-9]{2,})']
                 \ }
     nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
     nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
@@ -779,4 +779,36 @@
                 \ 'i:identifiers',
                 \ 'c:classes',
                 \ ],
+                \ }
+    let g:tagbar_type_rust = {
+                \ 'ctagstype' : 'rust',
+                \ 'kinds' : [
+                \ 'f:functions',
+                \ 'm:modules',
+                \ 'i:implementation',
+                \ 'T:types',
+                \ 't:traits',
+                \ 'g:enum',
+                \ 'c:consts',
+                \ 's:structure',
+                \ 'd:macros',
+                \ ],
+                \ }
+    let g:tagbar_type_clojure = {
+                \ 'ctagstype' : 'clojure',
+                \ 'kinds': [
+                \ 'n:namespace',
+                \ 'd:definition',
+                \ 'f:function',
+                \ 'p:private function',
+                \ 'm:macro',
+                \ 'i:inline',
+                \ 'a:mutimethod definition',
+                \ 'b:mutimethod instance',
+                \ 'c:definition(once)',
+                \ 's:struct',
+                \ 'v:intern',
+                \ 'y:symbol',
+                \ 'n:namespace'
+                \ ]
                 \ }
