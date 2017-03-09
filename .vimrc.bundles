@@ -132,3 +132,4 @@
     Bundle 'danro/rename.vim'
     UnBundle 'xptemplate'
     Bundle 'guns/vim-clojure-static'
+    Bundle 'mxw/vim-jsx'
